@@ -1,0 +1,154 @@
+/* Font Face: using TTF format */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 3D Canvas container */
+.three-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* NAV BAR */
+.nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  z-index: 10;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  padding-right: 1rem;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 0.2rem 0.4rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ff00ff;
+}
+
+.nav-links a.active {
+  background-color: #ff00ff;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.2rem 0.8rem;
+}
+
+/* Hero section: Closer to the top */
+.hero-section {
+  position: absolute;
+  top: 10%;
+  left: 2rem;
+  width: 30%;
+  text-align: left;
+  color: #fff;
+  z-index: 10;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  position: relative; /* Ensure the pseudo-element is positioned relative to h1 */
+}
+
+/* Pink line separator after h1 */
+.hero-section h1::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: #ff00ff;
+  margin: 0.5rem 0; /* Space between heading and paragraph */
+}
+
+.hero-subtext {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Sign-up button with gradient */
+.hero-cta {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(90deg, #43e0ff, #1E90FF);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-cta:hover {
+  background: linear-gradient(90deg, #1E90FF, #43e0ff);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+  .hero-section {
+    top: 8%;
+    width: 50%;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+}
